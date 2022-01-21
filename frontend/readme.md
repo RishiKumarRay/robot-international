@@ -1,25 +1,21 @@
-# Warung International & Wholesomeland Web Services
+# Frontend
 
-[![build-frontend-linux](https://github.com/wholesomeland/web/actions/workflows/build-frontend-linux.yml/badge.svg)](https://github.com/wholesomeland/web/actions/workflows/build-frontend-linux.yml) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+This directory contains the frontend codebase which is a [Flask](https://flask.palletsprojects.com). It's written in Python with [black](https://black.readthedocs.io/en/stable/) coding standards. Please refer to their docs for more info.
 
-This monorepo contains the web services for Warung International & Wholesomeland Discord Servers.
+## Getting Started
 
-We're using [Flask](https://flask.palletsprojects.com/) as our Website Framework. 
+To install the required dependencies:
 
-## Overview
+```bash
+pip install -r requirements.txt
+```
 
-- [`app.py`](app.py) Flask Framework in Python, obviously. 
-- [`test.py`](test.py) For testing MongoDB Connections through our website
-- [`wsgi.py`](test.py) WSGI systems for production uses 
-- [`/templates`](/templates) Website templates in HTML (Flask formatted) 
-- [`/static`](/static) our web assets (css, js, and image)
+To run the local development server:
 
-## Frontend and Backend Development
+```bash
+python app.py
+```
 
-To work on the frontend, you mostly only need to focus on the [`/templates`](/templates) directory. 
+Open [http://localhost:5000](http://localhost:5000) with your browser to see the result.
 
-Run `python app.py` to start working on frontend development.
-
-## Deployment
-
-The frontend is deployed directly to [Heroku](https://heroku.com/) from the `master` branch using this [Github Actions](/.github/workflows/build-frontend-linux.yml).
+Any edits to files in `app.py` will trigger hot-reloads. Edits to any HTML or Static content in either `static/` or `templates/` will not unfortunately.

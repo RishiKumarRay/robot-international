@@ -31,6 +31,7 @@ app.config["SECRET_KEY"] = OAUTH2_CLIENT_SECRET
 def token_updater(token):
     session["oauth2_token"] = token
 
+
 cluster = MongoClient(os.getenv("MONGODB_URI"))
 levelling = cluster["dagelan"]["levelling"]
 wm_levelling = cluster["discord"]["levelling"]
@@ -126,4 +127,4 @@ def internal_server_error(error):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=443, debug=True, ssl_context='adhoc')
+    app.run(host="0.0.0.0", port=443, debug=True, ssl_context="adhoc")
