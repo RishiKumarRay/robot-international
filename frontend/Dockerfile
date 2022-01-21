@@ -5,7 +5,7 @@ WORKDIR /usr/src/frontend
 RUN python -m pip install --upgrade pip
 RUN pip install --no-cache-dir flask flask-pymongo pymongo dnspython python-dotenv gunicorn requests-oauthlib pyopenssl
 
-COPY . .
+COPY . /usr/src/frontend
 
 EXPOSE 443
 
