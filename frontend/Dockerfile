@@ -1,7 +1,7 @@
 FROM python:3
 
 # We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
+COPY ./frontend/requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
@@ -11,4 +11,4 @@ COPY . /app
 
 EXPOSE 443
 
-CMD [ "python", "./app.py" ]
+CMD [ "python", "app.py" ]
