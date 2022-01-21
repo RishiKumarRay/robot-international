@@ -3,7 +3,7 @@ FROM python:3
 WORKDIR /frontend
 
 RUN python -m pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r flask flask-pymongo pymongo dnspython python-dotenv gunicorn requests-oauthlib pyopenssl
 
 COPY . /usr/src/frontend
 
