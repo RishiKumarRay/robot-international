@@ -2,12 +2,10 @@ FROM python:3
 
 WORKDIR /frontend
 
-# We copy just the requirements.txt first to leverage Docker cache
-COPY requirements.txt /app/requirements.txt
+RUN python -m pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install -r requirements.txt
-
-COPY . /app
+COPY . /usr/src/frontend
 
 EXPOSE 443
 
