@@ -51,7 +51,6 @@ jobs:
       
       - name: Extract metadata (tags, labels) for Docker
         id: backend_docker_metadata
-        id: backend_meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ secrets.DOCKER_BACKEND_REPOSITORY }}
@@ -89,7 +88,6 @@ jobs:
       
       - name: Extract metadata (tags, labels) for Docker
         id: frontend_docker_metadata
-        id: frontend_meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ secrets.DOCKER_FRONTEND_REPOSITORY }}
