@@ -9,4 +9,4 @@ COPY . /usr/src/frontend
 
 EXPOSE 443
 
-CMD [ "python", "app.py" ]
+CMD [ "python", "/usr/src/frontend/app.py" ]

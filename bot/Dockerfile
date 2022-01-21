@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir nextcord requests pymongo dnspython validators py
 
 COPY . /usr/src/bot
 
-CMD [ "python", "main.py" ]
+CMD [ "python", "/usr/src/bot/main.py" ]
