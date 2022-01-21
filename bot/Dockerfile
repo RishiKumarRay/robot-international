@@ -1,11 +1,10 @@
 FROM python:3
 
-WORKDIR /usr/src/bot
+WORKDIR /bot
 
-COPY ./bot/requirements.txt ./
 RUN python -m pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY . /usr/src/bot
 
 CMD [ "python", "main.py" ]
