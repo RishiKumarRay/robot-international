@@ -1,0 +1,21 @@
+{% extends 'full-page.html' %}
+{% block content %}
+	<div class="jumbotron home-jumbotron">
+		<div class="container">
+			<div class="row" style="display: flex;align-items: center;">
+				<div class="col-md-6  col-sm-12 text-center" >
+					<img src="{{url_for('static', filename='landing/img/logo.png')}}" class="hidden-xs">
+					<h3>Introducing <strong>Robot International</strong> the <img src="{{ url_for('static', filename='landing/img/discord.png') }}" class="discord-logo2"> bot </h3>
+					<h2>Add some !wumpus</h2>
+					<h2>to your <img src="{{ url_for('static', filename='landing/img/discord.png') }}" class="discord-logo1"> server</h2>
+					<p>
+					<a href="https://discord.com/api/oauth2/authorize?client_id=822110305717846087&permissions=8&scope=bot%20applications.commands" class="btn btn-home btn-lg">Add to Discord</a>
+					</p>
+				</div>
+				<div class="col-md-6 hidden-sm hidden-xs">
+					<img src="{{ url_for('static', filename='landing/img/overview.PNG') }}" style="height:80vh; border-radius: 10px;">
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

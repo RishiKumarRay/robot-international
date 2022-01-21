@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="jumbotron dashboard-jumbotron">
+		<div class="container">
+			<div class="row vertical-align">
+				<div class="col-md-12">
+						<img style="width:100px; margin:15px;" class="img-circle" src="{{ url_for('static', filename='image/Wholesomemaker.png') }}">
+					<h2>
+						<small style="color:#74C4D4;">Leaderboards</small><br />
+						Wholesomeland</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% block dash_content %}
+	{% endblock %}
+{% endblock %}

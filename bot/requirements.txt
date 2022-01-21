@@ -1,0 +1,12 @@
+nextcord
+requests
+pymongo
+dnspython
+validators
+pygithub
+python-dotenv
+pillow
+millify
+nekos.py
+aiohttp
+algoliasearch

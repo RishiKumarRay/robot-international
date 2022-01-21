@@ -1,0 +1,6 @@
+onwork
+venv
+.env
+.idea
+.vscode
+docker-compose.yml

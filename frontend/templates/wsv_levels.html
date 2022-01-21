@@ -1,0 +1,103 @@
+{% extends 'wsv_dash_base.html' %}
+{% block dash_content %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<h1></h1>
+				<div class="panel panel-primary">
+					<div class="panel-body">
+						Every minute that you're messaging, you <strong>randomly</strong> gain between 15 and 25 XP.<br /><br />
+						In the server, you type <strong>!rank</strong> to see your rank and level.
+					</div>
+				</div>
+				<h2>Role Rewards</h2>
+				<div class="panel panel-primary">
+					<div class="panel-body">
+						<small>Lvl. 1</small><br>
+						<div class="levels-kung" style="color:#99aab5">thug</div><br>
+						<small>Lvl. 5</small><br>
+						<div class="levels-kung" style="color:#99aab5">hustler</div><br>
+						<div class="levels-kung" style="color:#99aab5">perm-nickname</div><br>
+						<small>Lvl. 10</small><br>
+						<div class="levels-kung" style="color:#b9bbbe">soldier</div><br>
+						<div class="levels-kung" style="color:#99aab5">perm-emoji</div><br>
+						<small>Lvl. 15</small><br>
+						<div class="levels-kung" style="color:#acf3de">trigger</div><br>
+						<div class="levels-kung" style="color:#99aab5">perm-image</div><br>
+						<small>Lvl. 20</small><br>
+						<div class="levels-kung" style="color:#acf3de">enforcer</div><br>
+						<div class="levels-kung" style="color:#99aab5">perm-stream</div><br>
+						<small>Lvl. 25</small><br>
+						<div class="levels-kung" style="color:#81f1d2">facilitator</div><br>
+						<small>Lvl. 30</small><br>
+						<div class="levels-kung" style="color:#81f1d2">public enemy</div><br>
+						<small>Lvl. 35</small><br>
+						<div class="levels-kung" style="color:#5ae4d9">shot caller</div><br>
+						<small>Lvl. 40</small><br>
+						<div class="levels-kung" style="color:#5ae4d9">street boss</div><br>
+						<small>Lvl. 45</small><br>
+						<div class="levels-kung" style="color:#4bd4d9">right hand</div><br>
+						<small>Lvl. 50</small><br>
+						<div class="levels-kung" style="color:#4bd4d9">active</div><br>
+						<div class="levels-kung" style="color:#99aab5">top commenters</div><br>
+						<small>Lvl. 60</small><br>
+						<div class="levels-kung" style="color:#3dc3d9">sucka</div><br>
+						<small>Lvl. 70</small><br>
+						<div class="levels-kung" style="color:#3dc3d9">poot-butt</div><br>
+						<small>Lvl. 80</small><br>
+						<div class="levels-kung" style="color:#3dc3d9">buster</div><br>
+						<small>Lvl. 90</small><br>
+						<div class="levels-kung" style="color:#3dc3d9">red-headed stepchild</div><br>
+						<small>Lvl. 100</small><br>
+						<div class="levels-kung" style="color:#3dc3d9">peon</div><br>
+						<small>Lvl. 125</small><br>
+						<div class="levels-kung" style="color:#1cb2cd">pee-wee</div><br>
+						<small>Lvl. 150</small><br>
+						<div class="levels-kung" style="color:#1cb2cd">prankster</div><br>
+						<small>Lvl. 175</small><br>
+						<div class="levels-kung" style="color:#1cb2cd">mack</div><br>
+						<small>Lvl. 200</small><br>
+						<div class="levels-kung" style="color:#1cb2cd">pimp</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<h1>Leaderboard</h1>
+				<div class="list-group">
+					{% for x in rankings %}
+					<div class="list-group-item">
+						<div class="row">
+							<div class="col-md-1 col-sm-1 col-xs-1" style="padding-top: 15px;">
+								<div class="leaderboardRank"><strong>{{loop.index}}</strong></div>
+							</div>
+							<div class="col-md-1 col-sm-1 hidden-xs" style="padding:0">
+								<img onerror="this.src=&#39;https://cdn.discordapp.com/embed/avatars/1.png&#39;;"
+									src="{{x.image_url}}" style="width:100%" class="img-circle">
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-5">
+								<h3>{{x.displayname}}</h3>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4">
+								<center>
+									<h5><small>Experience: {{x.formatxp}}</small> | <small>Messages: {{x.formatmessage}}</small></h5>
+									<h5>Level {{x.level}}</h5>
+								</center>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2">
+								<input type="text" class="knob" value="{{'%0.f'|format(x.xprate|float)}}" data-width="70" data-height="70" data-thickness="0.15" data-fgColor="#269dc4" readOnly="true">
+							</div>
+						</div>
+					</div>
+					{% else %}
+					<center>
+						<h3>There's no one to display... YET! 😁</h3>
+					</center>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

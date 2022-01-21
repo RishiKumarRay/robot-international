@@ -1,0 +1,107 @@
+name: Build Production
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "docs/**"
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Github Actions
+        uses: actions/checkout@v2
+      - name: Lint with Black
+        uses: rickstaa/action-black@v1
+        with:
+          black_args: ". --check --diff --verbose --target-version py310"
+      - name: Create Pull Request
+        if: steps.action_black.outputs.is_formatted == 'true'
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Format Python code with psf/black push"
+          commit-message: ":art: Format Python code with psf/black"
+          body: |
+            There appear to be some python formatting errors in ${{ github.sha }}. This pull request
+            uses the [psf/black](https://github.com/psf/black) formatter to fix these issues.
+          base: ${{ github.head_ref }} # Creates pull request onto pull request or commit branch
+          branch: actions/black
+
+  build-backend:
+    needs: Lint
+    defaults:
+      run:
+        working-directory: bot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Actions
+        id: actions_checkout
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        id: docker_login
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Extract metadata (tags, labels) for Docker
+        id: docker_metadata
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ secrets.DOCKER_BACKEND_REPOSITORY }}
+      
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Image digest
+        id: docker_digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+
+  build-frontend:
+    needs: build-backend
+    defaults:
+      run:
+        working-directory: frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Actions
+        id: actions_checkout
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        id: docker_login
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Extract metadata (tags, labels) for Docker
+        id: docker_metadata
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ secrets.DOCKER_FRONTEND_REPOSITORY }}
+      
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Image digest
+        id: docker_digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
