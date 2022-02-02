@@ -29,18 +29,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/features.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/features.html",
-          "hash": "oVcv2eNzbzrP1LhTw0werTb5EUeT4lA/A4TWELo3YV8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
@@ -52,12 +40,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "9WvEafTPFk3KbCnDJqBhL4ZIfFbytbEx3yx/mwmHuho="
+          "hash": "QSSvPXL0RSCfi4dsyQaQAPJ8q1ANdN4HPCE+RXt1hoo="
         }
       },
       "is_incremental": false,
@@ -92,31 +83,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "TsbmBl01p7WMpcEoFnE6m7B7eu0kUGiU252TMr2H0A0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "website/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "website/toc.html",
-          "hash": "d3RA9J0A5TNcDIrZ4tHo6SP7RFh7PhDw6NuDwMOWOWM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "website/website.md",
-      "output": {
-        ".html": {
-          "relative_path": "website/website.html",
-          "hash": "bSkDxqTywKZTDNCuJukV/Hkgw30ESJdgNrMxUEIYN80="
+          "hash": "PChjvWXoxgN7kxKfnDL0UudovIVzzVolPy6Ozuz/pTA="
         }
       },
       "is_incremental": false,
@@ -137,7 +104,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 6,
+          "total_file_count": 4,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
