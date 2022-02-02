@@ -1,8 +1,8 @@
-- name: Getting Started
+- name: Introductions
   href: intro.md
-- name: Features
-  href: features.md
 - name: Commands
   href: docs.md
+- name: Leaderboards Website
+  href: website.md
 - name: Contributing
   href: contributing.md
