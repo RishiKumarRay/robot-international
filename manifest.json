@@ -29,6 +29,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/frontend.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/frontend.html",
+          "hash": "yyKyFydRLHenHpx+iYW2eskGIibzht8cUyFo2ONFnbQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
@@ -45,19 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "xfJeojbZs7nqjjxElSr0SoN6CRhU+EHMlUlBGbzfShI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/website.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/website.html",
-          "hash": "D1QqYuPGN2NC+5fvYYBuKwVkrTLgwA4kmUgvfX6mX+E="
+          "hash": "JUz32R2OZiRCF97mgu9hZP1tpiO3LCcRZPq0zKTrcV8="
         }
       },
       "is_incremental": false,
