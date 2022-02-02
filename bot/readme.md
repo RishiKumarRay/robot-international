@@ -26,10 +26,7 @@ password. If you don't have Docker, you'll need to
 python -m venv /path/to/your/venv
 
 # then, Use the venv
-cd /path/to/your/venv/scripts
-./activate.ps1
-cd..
-cd..
+./path/to/your/venv/scripts/activate.ps1
 
 # Install the Dependencies first!
 pip install -r requirements.txt
