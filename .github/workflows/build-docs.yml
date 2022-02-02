@@ -44,3 +44,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/_site
           cname: intern.gnztmpz.eu.org
+          full_commit_message: ${{ github.event.head_commit.message }}
