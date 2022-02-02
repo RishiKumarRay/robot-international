@@ -44,7 +44,7 @@ class readme(commands.Cog):
         )
         embed.set_thumbnail(url="https://probot.media/8LBlJpkekY.png")
         embed.set_footer(
-            text=f"Choose a Option to get a role!",
+            text=f"React to get a role!",
             icon_url="https://probot.media/luV8g6k4WT.gif",
         )
         await msg_b.edit(embed=embed)

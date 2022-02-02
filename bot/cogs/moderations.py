@@ -808,6 +808,54 @@ class moderations(commands.Cog):
         await ctx.send(embed=embed)
         # sends the error message to the channel
 
+    @commands.command(description="Toggle a commands on/off", hidden=True)
+    @commands.has_permissions(administrator=True)
+    async def toggle(self, ctx, *, command):
+        command = self.client.get_command(command)
+        if command == None:
+            await ctx.send("That command does not exist!")
+        elif ctx.command == command:
+            await ctx.send("you can't toggle that command")
+        else:
+            command.enabled = not command.enabled
+            ternary = "enabled" if command.enabled else "disabled"
+            await ctx.send(f"Command `{command.name}` has been {ternary}")
+
+    @toggle.error
+    async def toggle_error(self, ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            embed = nextcord.Embed(
+                description=f"<:cross:839158779815657512> You must have the `Administrator` permission to use this command!",
+                color=0xFF0000,
+            )
+            await ctx.send(embed=embed)
+
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        if isinstance(error, commands.DisabledCommand):
+            embed = nextcord.Embed(
+                description=f"<:cross:839158779815657512> **{ctx.author.display_name}**, That command is disabled!",
+                color=0xFF0000,
+            )
+            # sends the error message to the channel
+            return await ctx.send(embed=embed)
+
+    @dadjoke.error  # command name error
+    async def dadjoke_error(self, ctx, error):  # define error
+        # tells the bot its a cool down error
+        if isinstance(error, commands.MissingPermissions):
+            embed = nextcord.Embed(
+                description=f"<:cross:839158779815657512> You must have the `Kick Members` permission to use this command!",
+                color=0xFF0000,
+            )
+        await ctx.send(embed=embed)
+        if isinstance(error, commands.MissingPermissions):
+            embed = nextcord.Embed(
+                description=f"<:cross:839158779815657512> You must have the `Kick Members` permission to use this command!",
+                color=0xFF0000,
+            )
+        await ctx.send(embed=embed)
+
 
 def setup(client):
     client.add_cog(moderations(client))
