@@ -2,7 +2,7 @@
   href: intro.md
 - name: Commands
   href: docs.md
-- name: Leaderboards Website
-  href: website.md
+- name: Frontend
+  href: frontend.md
 - name: Contributing
   href: contributing.md
