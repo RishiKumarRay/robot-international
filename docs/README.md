@@ -16,10 +16,10 @@ choco install docfx -y
 brew install docfx
 
 # Clone the Project
-git clone https://github.com/wholesomeland/docs-new.git
+git clone https://github.com/wholesomeland/robot-international.git
 
 # Open the Project Directory
-cd /path/to/project
+cd /path/to/project/docs
 
 # Start the server
 docfx docfx.json --serve
