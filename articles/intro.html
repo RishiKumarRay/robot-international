@@ -6,10 +6,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Getting Started </title>
+    <title>Introduction </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Getting Started ">
-    <meta name="generator" content="docfx 2.58.9.0">
+    <meta name="title" content="Introduction ">
+    <meta name="generator" content="docfx 2.59.0.0">
     
     <link rel="shortcut icon" href="https://assets.gnztmpz.eu.org/WI%20logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -91,7 +91,7 @@
                         </div>
 
                     <article class="content wrap" id="_content" data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="introduction">Introduction</h1>
 
 <p>All you need to know to &quot;How to setup a environment for Testing/Contributing/Use this source code&quot;.</p>
 <h2 id="testingworkflow">Testing/Workflow</h2>
@@ -99,7 +99,7 @@
 <ul>
 <li>A Discord Bot, with <code>server member intent</code> and <code>presence intent</code>.. obviously.. <a href="https://discord.com/developers/applications">click here</a></li>
 <li>A Discord server to test - you can't use the Wholesome Series Videos Discord Server to do tests</li>
-<li><a href="https://www.python.org/downloads/release/python-3100/">Python version 3.10.0</a> - no guarantees on older versions</li>
+<li><a href="https://www.python.org/downloads/release/python-380/">Python version 3.8</a> or latest - no guarantees on older versions</li>
 <li>A MongoDB Server for levelling and warning system (Pick one)
 <ul>
 <li><a href="https://www.mongodb.com/try/download/community">MongoDB Community Server (Offline)</a></li>
@@ -109,26 +109,9 @@
 <li>A Good Code IDE, obviously.. I recommend you <a href="https://code.visualstudio.com">Visual Studio Code</a></li>
 </ul>
 <p>If you don't own/admin a Discord server, creating one is simple, you can do it from the same menu you join discord servers from.</p>
-<h2 id="env-systems">.env systems</h2>
-<p>We're starting to implement the <code>.env</code> files.</p>
-<p><del>We don't provide the examples, <em>yet.</em></del></p>
-<p>There's an example <code>./.env</code> on root folder, but.. it's optimized for Production use cases scenario.
-Feel free to use it as your starting guide! ✌️</p>
-<p>Feel free to use these as your starting guide! ✌️</p>
-<pre><code class="lang-bash">VERSION=&quot;refer to main.py file&quot;
-BOT_TOKEN=&quot;https://discord.com/developers/applications&quot;
-MONGODB_URL=&quot;your mongodb uri's&quot;
-GITHUB_TOKEN=&quot;your github token&quot;
-GIST_ID=&quot;provide your github gist id for readme commands!&quot;
-GIST_ID2=&quot;provide your github gist id for role info commands!&quot;
-RAPID_API_KEY=&quot;for urban and dadjokes commands&quot;
-MAIN_INVITE=&quot;provide your server invite&quot;
-STICKER_INVITE=&quot;provide your sticker server invite (optional)&quot;
-</code></pre>
-<h2 id="docker">Docker</h2>
-<p>Thanks to <a href="https://github.com/rsetiawan7">🐧 rsetiawan7</a>, Wholesomemaker Supports running on Docker. but.. the Active Docker Images has been used for Production Purposes as a Private Repository.</p>
-<p>You &quot;could&quot; technically run it on Docker, I have provide you the essence of it (Dockerfile and github actions settings).</p>
-<p>I assume you already know how to do it, Please Refer to <a href="https://github.com/Matthew-Soft/Wholesomemaker/tree/master/Docker"><code>Docker</code></a> folder to Getting Started. Thanks. 😉</p>
+<h2 id="running-with-a-database">Running with a database</h2>
+<p>If you want to develop features that require persisting data, spin up a MongoDB database. If you have Docker installed, this is as simple as running make mongodb which will start a MongoDB container with a user root that has no password.</p>
+<p>Finally, the application requires some configuration. Copy the example.env to .env and modify it to use your token and various IDs. Depending on what you're working on, some values won't be necessary.</p>
 </article>
               
                 </div>
