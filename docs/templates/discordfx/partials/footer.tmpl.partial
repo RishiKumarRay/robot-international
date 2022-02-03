@@ -1,4 +1,4 @@
 <div class="footer">
   {{{_appFooter}}}
-  {{^_appFooter}}<span>Copyright 2021-present <strong>MatthewSoft</strong></span>{{/_appFooter}}
+  {{^_appFooter}}<span>Copyright 2021-present <strong>GNZTMPZ</strong></span>{{/_appFooter}}
 </div>
