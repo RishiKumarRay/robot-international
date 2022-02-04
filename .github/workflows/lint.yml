@@ -16,4 +16,4 @@ jobs:
       - name: Lint with Black
         uses: rickstaa/action-black@v1
         with:
-          black_args: ". --check --diff --verbose --target-version py310"
+          black_args: ". --check"
