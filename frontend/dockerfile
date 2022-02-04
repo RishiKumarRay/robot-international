@@ -1,0 +1,15 @@
+FROM python:3.9-slim-bullseye
+
+WORKDIR /Robot-App
+
+COPY  . .
+ 
+RUN   pip install -r requirements.txt
+
+ENV FLASK_APP=app.py
+      
+EXPOSE 5000
+
+ENTRYPOINT [ "flask"]
+
+CMD [ "run", "--host", "0.0.0.0" ]
